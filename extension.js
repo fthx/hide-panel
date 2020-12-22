@@ -39,7 +39,6 @@ class Extension {
     disable() {
     	Overview.disconnect(this.entering_overview);
     	Overview.disconnect(this.leaving_overview);
-    	Panel.set_height(this.panel_height);
     	this._set_panel(this.panel_height, 255);
     }
 }
