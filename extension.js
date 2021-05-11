@@ -77,8 +77,8 @@ class Extension {
 
     enable() {
     	AppMenu.container.hide();
-		this._hide_panel();
 		this.panel_icon = new HideIndicator();
+		this._hide_panel();
 		Panel.addToStatusArea('hide-panel', this.panel_icon);
 
 		this.showing = Overview.connect('showing', this._show_panel.bind(this));
