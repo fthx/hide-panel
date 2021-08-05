@@ -31,6 +31,14 @@ class HideIndicator extends PanelMenu.Button {
 		this.click = this.connect('button-release-event', this._switch_active.bind(this));
 	}
 
+	_set_app_menu() {
+		if (this.is_active) {
+			AppMenu.container.hide();
+		} else {
+			AppMenu.container.show();
+		}
+	}
+
 	_set_icon() {
 		if (this.is_active) {
 			this.hbox.set_child(this.active_icon);
@@ -47,6 +55,7 @@ class HideIndicator extends PanelMenu.Button {
 	_switch_active() {
 		this.is_active = !this.is_active;
 		this._set_icon();
+		this._set_app_menu();
 		if (this.is_active) {
 			this._set_panel(1, 0);
 		}
